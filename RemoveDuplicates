@@ -1,0 +1,32 @@
+private static int[] RemoveDuplicates()
+        {
+            int[] arr = { 7, 7, 8, 8, 9, 1, 1, 4, 2, 2 };
+            int index = 1;
+          
+            // Time - O(n), Space, O(n)
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                Console.WriteLine("i is " + arr[i]);
+
+                Console.WriteLine("i+1 is " + arr[i +1]);
+
+                if (arr[i] != arr[i + 1])
+                {
+                    arr[index] = arr[i + 1];
+                    index++;
+                }
+            }
+
+            int[] newArr = new int[index];
+
+            for (int i = 0; i < index; i++)
+            {
+                newArr[i] = arr[i];
+            }
+
+
+            newArr.ToList().ForEach(x => Console.WriteLine(x));
+
+
+            return newArr;
+        }
